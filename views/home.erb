@@ -1,7 +1,18 @@
 <h1>Your Monthly Budget</h1>
 
 <h3>Expenses</h3>
-<p><%= @expenses %></p>
+<a href="/expenses/new">Add expense</a>
+<ul>
+<% @expenses.each do |name, cost| %>
+<li><%=name%>: $ <%=cost%></li>
+<% end %>
+</ul>
+<h4>Total Expenses:</h4>
+<p>$ <%= total_expenses(@expenses) %></p>
 
 <h3>Income</h3>
-<p><%= @income %></p>
+<a href="/income/new">Change income</a>
+<p>$ <%= @income %></p>
+
+<h3>Under/Over Budget:</h3>
+<p>$ <%= budget_calculator(@income, @expenses) %></p>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Monthly Budget</title>
+</head>
+<body>
+<% if session[:message] %>
+<%= session.delete(:message) %>
+<% end %>
+<%==yield%>
+</body>
+</html>
